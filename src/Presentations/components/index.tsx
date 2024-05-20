@@ -7,9 +7,9 @@ export * from './chat-bubbles/MyMessage';
 export * from './sidebar/SidebarMenuTab';
 
 // Chat Box
-export * from './chat-imput-boxes/TextMessageBox';
-export * from './chat-imput-boxes/TextMessageBoxFile';
-export * from './chat-imput-boxes/TextMessageBoxSelect';
+export * from './chat-input-boxes/TextMessageBox';
+export * from './chat-input-boxes/TextMessageBoxFile';
+export * from './chat-input-boxes/TextMessageBoxSelect';
 
 
 // LOADERS

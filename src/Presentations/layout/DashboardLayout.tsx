@@ -5,7 +5,7 @@ import { SidebarMenuTab } from "../components/sidebar/SidebarMenuTab";
 export const DashboardLayout = () => {
   return (
     <main className="flex flex-row mt-7">
-      <nav className="hidden sm:flex flex-col ml-5 w-[370px] min-h-[calc(100vh-3.0rem)] bg-green-600 bg-opacity-10 p-5 rounded-3xl">
+      <nav className="hidden sm:flex flex-col ml-5 w-[370px] min-h-[calc(100vh-3.0rem)] bg-gray-600 bg-opacity-10 p-5 rounded-3xl">
         <h1 className="font-bold text-lg lg:text-3xl bg-gradient-to-br from-green-600 via-white bg-clip-text text-transparent">
           VoiBot<span className="text-green-600">.</span>
         </h1>
