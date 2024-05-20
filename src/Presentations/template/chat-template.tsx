@@ -1,30 +1,27 @@
 import { useState } from "react";
-import {
-  GptMessages,
-  MyMessage,
-  TextMessageBox,
-  TypingLoader,
-} from "../../components";
+import { GptMessages, MyMessage, TypingLoader, TextMessageBox } from "../components";
+
 
 interface Messages {
   text: string;
   isGpt: boolean;
 }
 
-export const OrthographyPage = () => {
+export const ChatTemplate = () => {
   const [isLoading, setLoading] = useState(false);
   const [messages, setMessages] = useState<Messages[]>([]);
 
-  const handlePost = async (text: string) => {
+
+  const handlePost = async ( text : string) => {
     setLoading(true);
-    setMessages((prev) => [...prev, { text: text, isGpt: false }]); //no es necesario el text:text pero quiero que sea mas simple de leer.
+   setMessages((prev) => [...prev, { text: text, isGpt: false }]); //no es necesario el text:text pero quiero que sea mas simple de leer.
 
-    //  ToDo UseCase
+  //  ToDo UseCase
 
-    setLoading(false);
+  setLoading(false)
 
-    //  ToDo: Añadir mensage de isGpt en true
-  };
+  //  ToDo: Añadir mensage de isGpt en true
+  }
 
   return (
     <div className="chat-container">
@@ -43,11 +40,14 @@ export const OrthographyPage = () => {
           )}
 
           {/*LOADER  */}
-          {isLoading && (
-            <div className="col-start-1 col-end-12 fade-in">
-              <TypingLoader />
-            </div>
-          )}
+          {isLoading &&(
+          <div className="col-start-1 col-end-12 fade-in">
+            <TypingLoader />
+          </div>
+
+          )
+          }
+
         </div>
       </div>
 
@@ -55,10 +55,9 @@ export const OrthographyPage = () => {
 
       <TextMessageBox
         onSendMessage={handlePost}
-        placeholder="Escriba su mensaje aquí"
+        placeholder="Escriba ssu mensaje aquí"
         disableCorrections
       />
-
     </div>
   );
 };

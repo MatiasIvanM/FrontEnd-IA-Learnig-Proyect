@@ -24,7 +24,7 @@ export const SidebarMenuTab = ({
         }
         >
 
-          <i className ={`${icon} text-2xl mr-4 text-indigo-400`}></i>
+          <i className ={`${icon} text-2xl mr-4 text-green-600`}></i>
           <div className="felx flex-col felx-grow">
             <span className="text-white text-lg font-bold ">
               {title}

@@ -1,26 +1,28 @@
 import { FormEvent, useState } from "react";
 
 interface Props {
-  onSendMessage: (message: string) => void;
+  onSendMessage: (message: string, selectedOption: string) => void;
   placeholder?: string;
   disableCorrections?: boolean;
+  Options: Options[];
 }
 
-export const TextMessageBox = ({
-  onSendMessage,
-  placeholder,
-  disableCorrections = false,
-}: Props) => {
-  const [message, setMessage] = useState("");
+interface Options {
+  id: string;
+  text: string;
+}
 
+export const TextMessageBoxSelect = ({ onSendMessage, placeholder, disableCorrections = false, Options,}: Props) => {
+  
+  const [message, setMessage] = useState("");
+  const [selectedOption, setSelectedOption] = useState<string>('');
 
   const handleSendMessage = (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
 
     if (message.trim().length === 0) return;
-    onSendMessage(message);
-    setMessage('');
-
+    onSendMessage(message, selectedOption);
+    setMessage("");
   };
 
   return (
@@ -29,12 +31,12 @@ export const TextMessageBox = ({
       className=" flex flex-row items-center h-16 rounded-xl bg-white w-full px-4"
     >
       <div className="flex-grow">
-        <div className="relative w-full">
+        <div className="flex">
           <input
             type="text"
             autoFocus
             name="message"
-            className="flex w-full border rounded-xl text-gray-800 focus:outline-none focus:border-green-400 h-10"
+            className="w-full border rounded-xl text-gray-800 focus:outline-none focus:border-indigo-400 h-10"
             placeholder={placeholder}
             autoComplete={disableCorrections ? "on" : "off"}
             autoCorrect={disableCorrections ? "on" : "off"}
@@ -42,6 +44,20 @@ export const TextMessageBox = ({
             value={message}
             onChange={(e) => setMessage(e.target.value)}
           />
+
+          <select
+            name="select"
+            className="w-2/5 ml-5 border rounded-xl text-gray-800 focus:outline-none focus:border-indigo-300 pl-4 h-10"
+            value= {selectedOption}
+            onChange={ e =>setSelectedOption (e.target.value)}
+          >
+            <option value="">Seleccione una opción</option>
+            {Options.map(({ id, text }) => (
+              <option key={id} value={id}>
+                {text}
+              </option>
+            ))}
+          </select>
         </div>
       </div>
       <div className="ml-4">
