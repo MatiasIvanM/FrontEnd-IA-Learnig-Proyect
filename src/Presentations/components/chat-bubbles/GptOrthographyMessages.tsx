@@ -21,11 +21,7 @@ export const GptOrthographyMessages = ({ userScore, errors, prompCorregida, mess
 
           <h3 className="text-2xl"> Puntaje: {userScore} </h3>
           <p> {message} </p>
-          <br />
-          <h2 className="text-xl text"> Tu texto corregido:  </h2>
-          <p> { prompCorregida } </p>
-
-         <br/>{
+          {
             (errors.length === 0) ?
               <p>No se econtraton errores, esta Perfecto!</p>
               : (<>
@@ -38,7 +34,10 @@ export const GptOrthographyMessages = ({ userScore, errors, prompCorregida, mess
                   }
                 </ul>
               </>
-          )}
+              )}
+          <br />
+          <h2 className="text-xl text"> Tu texto corregido:  </h2>
+          <p> {prompCorregida} </p>
 
         </div>
       </div>
