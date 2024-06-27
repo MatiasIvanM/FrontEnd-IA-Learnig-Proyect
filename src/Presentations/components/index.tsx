@@ -1,7 +1,7 @@
 // CHAT BUBBLES
 export * from './chat-bubbles/GptMessages';
 export * from './chat-bubbles/MyMessage';
-
+export * from './chat-bubbles/GptOrthographyMessages';
 
 // sidebar
 export * from './sidebar/SidebarMenuTab';
