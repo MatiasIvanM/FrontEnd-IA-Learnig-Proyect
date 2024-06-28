@@ -23,7 +23,7 @@ ul {
 }
 
 strong {
-  @apply font-bold text-indigo-400;
+  @apply font-bold text-green-600 text-lg;
 }
 
 em {
@@ -32,11 +32,11 @@ em {
 
 
 .btn-primary {
-  @apply bg-green-600 text-white font-bold py-2 px-4 rounded-xl hover:bg-green-800 transition-all duration-200 ease-in-out;
+  @apply bg-green-500 text-white font-bold py-2 px-4 rounded-xl hover:bg-green-700 transition-all duration-200 ease-in-out;
 }
 
 .btn-primary:disabled {
-  @apply bg-gray-600 text-white font-bold py-2 px-4 rounded-xl opacity-50 cursor-not-allowed;
+  @apply bg-green-500 text-white font-bold py-2 px-4 rounded-xl opacity-50 cursor-not-allowed;
 }
 
 .chat-container {

@@ -24,7 +24,7 @@ export const OrthographyPage = () => {
   const [messages, setMessages] = useState<Messages[]>([]);
   const messagesEndRef = useRef<HTMLDivElement>(null);
 
-  
+
   const scrollToBottom = () => {
     messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
   };
@@ -75,13 +75,13 @@ export const OrthographyPage = () => {
               <GptOrthographyMessages
                 key={index}
                 {...message.info!}
-                // userScore={message.info!.userScore}
-                // errors={message.info!.errors}
-                // prompCorregida={message.info!.prompCorregida}
-                // message={message.info!.message}
+              // userScore={message.info!.userScore}
+              // errors={message.info!.errors}
+              // prompCorregida={message.info!.prompCorregida}
+              // message={message.info!.message}
               />
             ) : (
-                <MyMessage key={index} text={message.text} />
+              <MyMessage key={index} text={message.text} />
             )
           )}
 
